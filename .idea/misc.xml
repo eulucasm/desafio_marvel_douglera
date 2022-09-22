@@ -12,6 +12,12 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.175" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/layout/fragment_details_character.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/fragment_favorite_character.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/fragment_list_character.xml" value="0.4638655462184874" />
+        <entry key="app/src/main/res/layout/fragment_search_character.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/item_character.xml" value="0.28559213339033773" />
+        <entry key="app/src/main/res/layout/item_comic.xml" value="0.284737067122702" />
         <entry key="app/src/main/res/menu/menu_details.xml" value="0.47869674185463656" />
         <entry key="app/src/main/res/menu/menu_nav.xml" value="0.19895833333333332" />
       </map>
