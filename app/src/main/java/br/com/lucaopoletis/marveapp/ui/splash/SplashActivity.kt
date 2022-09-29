@@ -1,7 +1,8 @@
-package br.com.lucaopoletis.marveapp
+package br.com.lucaopoletis.marveapp.ui.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.lucaopoletis.marveapp.R
 import br.com.lucaopoletis.marveapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

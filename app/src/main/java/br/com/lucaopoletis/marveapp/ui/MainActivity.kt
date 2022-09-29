@@ -1,4 +1,4 @@
-package br.com.lucaopoletis.marveapp
+package br.com.lucaopoletis.marveapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
