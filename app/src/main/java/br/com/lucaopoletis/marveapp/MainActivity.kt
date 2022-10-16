@@ -1,12 +1,13 @@
-package br.com.lucaopoletis.marveapp.ui
+package br.com.lucaopoletis.marveapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import br.com.lucaopoletis.marveapp.R
 import br.com.lucaopoletis.marveapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navHostFragment: NavHostFragment
