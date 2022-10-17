@@ -1,0 +1,13 @@
+package br.com.lucaopoletis.marveapp.util
+
+object Constants {
+
+    const val BASE_URL = "https://gateway.marvel.com/v1/public/"
+
+    const val PUBLIC_KEY = "e88569443d4bc2e552ecc8c3e9cd13b3"
+    const val PRIVATE_KEY = "dfafc44b23a1bb7848e3dd606566b97d31bcb5ea"
+
+    const val APIKEY = "apikey"
+    const val HASH = "hash"
+    const val TS = "ts"
+}
