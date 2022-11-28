@@ -32,7 +32,7 @@ object Module {
                 val newUrl = chain.request().url
                     .newBuilder()
                     .addQueryParameter(Constants.TS, currentTimestamp.toString())
-                    .addQueryParameter(Constants.APIKEY, Constants.PRIVATE_KEY)
+                    .addQueryParameter(Constants.APIKEY, Constants.PUBLIC_KEY)
                     .addQueryParameter(Constants.HASH,
                         provideToMd5Hash(currentTimestamp.toString() + Constants.PRIVATE_KEY + Constants.PUBLIC_KEY))
                     .build()
