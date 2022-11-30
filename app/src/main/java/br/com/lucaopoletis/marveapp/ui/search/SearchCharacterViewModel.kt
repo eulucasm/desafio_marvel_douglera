@@ -16,12 +16,13 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchCharacterViewModel @Inject constructor(
     private val repository: MarvelRepository
-):ViewModel() {
+) : ViewModel() {
 
-    private val _searchCharacter = MutableStateFlow<ResourceState<CharacterModelResponse>>(ResourceState.Empty())
+    private val _searchCharacter =
+        MutableStateFlow<ResourceState<CharacterModelResponse>>(ResourceState.Empty())
     val searchCharacter: StateFlow<ResourceState<CharacterModelResponse>> = _searchCharacter
 
-    fun fetch(nameStartsWith: String) = viewModelScope.launch{
+    fun fetch(nameStartsWith: String) = viewModelScope.launch {
         safeFetch(nameStartsWith)
     }
 
@@ -30,7 +31,7 @@ class SearchCharacterViewModel @Inject constructor(
         try {
             val response = repository.list(nameStartsWith)
             _searchCharacter.value = handleResponse(response)
-        }catch (t: Throwable) {
+        } catch (t: Throwable) {
             when (t) {
                 is IOException -> _searchCharacter.value = ResourceState.Error("Erro na rede")
                 else -> _searchCharacter.value = ResourceState.Error("Falha na converção")
@@ -39,7 +40,7 @@ class SearchCharacterViewModel @Inject constructor(
     }
 
     private fun handleResponse(response: Response<CharacterModelResponse>): ResourceState<CharacterModelResponse> {
-        if(response.isSuccessful){
+        if (response.isSuccessful) {
             response.body()?.let {
                 return ResourceState.Success(it)
             }
