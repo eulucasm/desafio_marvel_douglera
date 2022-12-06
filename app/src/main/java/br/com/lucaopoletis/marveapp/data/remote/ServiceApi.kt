@@ -1,4 +1,4 @@
-package br.com.lucaopoletis.marveapp.data.model.remote
+package br.com.lucaopoletis.marveapp.data.remote
 
 import br.com.lucaopoletis.marveapp.data.model.character.CharacterModelResponse
 import br.com.lucaopoletis.marveapp.data.model.comic.ComicModelResponse

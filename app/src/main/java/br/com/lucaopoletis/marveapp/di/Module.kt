@@ -1,11 +1,16 @@
 package br.com.lucaopoletis.marveapp.di
 
-import br.com.lucaopoletis.marveapp.data.model.remote.ServiceApi
+import android.content.Context
+import androidx.room.Room
+import br.com.lucaopoletis.marveapp.data.local.MarvelDataBase
+import br.com.lucaopoletis.marveapp.data.remote.ServiceApi
 import br.com.lucaopoletis.marveapp.util.Constants
 import br.com.lucaopoletis.marveapp.util.Constants.BASE_URL
+import br.com.lucaopoletis.marveapp.util.Constants.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -20,6 +25,20 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object Module {
+
+    @Singleton
+    @Provides
+    fun provideMarvelDatabase(
+        @ApplicationContext context: Context
+    ) = Room.databaseBuilder(
+        context,
+        MarvelDataBase::class.java,
+        DATABASE_NAME
+    ).build()
+
+    @Singleton
+    @Provides
+    fun provideMarvelDao(dataBase: MarvelDataBase) = dataBase.marvelDao()
 
     @Singleton
     @Provides

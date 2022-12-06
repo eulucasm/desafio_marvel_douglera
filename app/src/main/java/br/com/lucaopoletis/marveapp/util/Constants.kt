@@ -2,6 +2,7 @@ package br.com.lucaopoletis.marveapp.util
 
 object Constants {
 
+    const val DATABASE_NAME = "marvel.db"
     const val BASE_URL = "https://gateway.marvel.com/v1/public/"
 
     const val PUBLIC_KEY = "e88569443d4bc2e552ecc8c3e9cd13b3"
