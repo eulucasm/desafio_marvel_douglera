@@ -1,5 +1,6 @@
-package br.com.lucaopoletis.marveapp.ui.splash
+package br.com.lucaopoletis.marveapp.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.lucaopoletis.marveapp.R
@@ -15,5 +16,16 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        setupSplash()
+    }
+
+    private fun setupSplash() = with(binding) {
+        tvSplash.alpha = 0f
+        tvSplash.animate().setDuration(1000).alpha(1f).withEndAction {
+            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            finish()
+        }
     }
 }

@@ -1,9 +1,10 @@
-package br.com.lucaopoletis.marveapp
+package br.com.lucaopoletis.marveapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import br.com.lucaopoletis.marveapp.R
 import br.com.lucaopoletis.marveapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottonNavigation.apply {
             setupWithNavController(navController)
-            //setOnNavigationItemReselectedListener {  }
+            setOnNavigationItemReselectedListener {  }
         }
     }
 }

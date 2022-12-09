@@ -2,6 +2,7 @@ package br.com.lucaopoletis.marveapp.ui.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.com.lucaopoletis.marveapp.data.model.character.CharacterModel
 import br.com.lucaopoletis.marveapp.data.model.comic.ComicModelResponse
 import br.com.lucaopoletis.marveapp.repository.MarvelRepository
 import br.com.lucaopoletis.marveapp.ui.state.ResourceState
@@ -46,5 +47,9 @@ class DetailsCharacterViewModel @Inject constructor(
             }
         }
         return ResourceState.Error(response.message())
+    }
+
+    fun insert(characterModel: CharacterModel) = viewModelScope.launch {
+        repository.insert(characterModel)
     }
 }
