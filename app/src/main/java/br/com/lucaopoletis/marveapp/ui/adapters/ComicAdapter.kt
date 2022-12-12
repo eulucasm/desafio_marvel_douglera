@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import br.com.lucaopoletis.marveapp.data.model.comic.ComicModel
 import br.com.lucaopoletis.marveapp.databinding.ItemComicBinding
+import br.com.lucaopoletis.marveapp.util.loadImage
 import com.bumptech.glide.Glide
 
 class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
@@ -54,9 +55,7 @@ class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
         holder.binding.apply {
             tvNameComic.text = comic.title
             tvDescriptionComic.text = comic.description
-            Glide.with(holder.itemView.context)
-                .load(comic.thumbnailModel.path + "." + comic.thumbnailModel.extension)
-                .into(imgComic)
+            loadImage(imgComic, comic.thumbnailModel.path, comic.thumbnailModel.extension)
         }
     }
 }

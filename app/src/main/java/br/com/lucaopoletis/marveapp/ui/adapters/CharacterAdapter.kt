@@ -9,6 +9,7 @@ import br.com.lucaopoletis.marveapp.R
 import br.com.lucaopoletis.marveapp.data.model.character.CharacterModel
 import br.com.lucaopoletis.marveapp.databinding.ItemCharacterBinding
 import br.com.lucaopoletis.marveapp.util.limitDescription
+import br.com.lucaopoletis.marveapp.util.loadImage
 import com.bumptech.glide.Glide
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
@@ -59,9 +60,11 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
                 tvDescriptionCharacter.text = character.description.limitDescription(100)
             }
 
-            Glide.with(holder.itemView.context)
-                .load(character.thumbnailModel.path + "." + character.thumbnailModel.extension)
-                .into(imgCharacter)
+            loadImage(
+                imgCharacter,
+                character.thumbnailModel.path,
+                character.thumbnailModel.extension
+            )
         }
         holder.itemView.setOnClickListener {
             onItemClickListener?.let {
